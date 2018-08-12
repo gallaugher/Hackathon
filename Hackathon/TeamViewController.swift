@@ -29,10 +29,26 @@ class TeamViewController: UIViewController {
     }
     
     func updateUserInterfaace() {
-        teamNameField.text = team.teanName
+        teamNameField.text = team.teamName
         universityField.text = team.university
         projectNameField.text = team.projectName
         descriptionTextView.text = team.description
+    }
+    
+    func updateDataFromInterface() {
+        team.teamName = teamNameField.text!
+        team.university =  universityField.text!
+        team.projectName = projectNameField.text!
+        team.description = descriptionTextView.text
+    }
+    
+    func leaveViewController() {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 
     @IBAction func findLocationPressed(_ sender: UIBarButtonItem) {
@@ -42,15 +58,20 @@ class TeamViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        self.updateDataFromInterface()
+        team.saveData() { success in
+            if success {
+                // Return to previous view controller
+                // We can use the "Cancel" code here because don't need to explicitly pass back data. We'll instead use a Firebase feature that "listens" for updates to on the earlier view controller and reloads these changes into the table view, automatically.
+                self.leaveViewController()
+            } else {
+                print("Can't segue because of the error")
+            }
+        }
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        let isPresentingInAddMode = presentingViewController is UINavigationController
-        if isPresentingInAddMode {
-            dismiss(animated: true, completion: nil)
-        } else {
-            navigationController?.popViewController(animated: true)
-        }
+        leaveViewController()
     }
 }
 

@@ -16,7 +16,7 @@ class TeamsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var teams: Teams!
+    var teams = ["CodeDivas", "Swiftettes", "Bug Cru$ha$", "Parliament Swiftadelic", "Hodor's Downloaders", "Ada's Playground"]
     var authUI: FUIAuth!
     
     override func viewDidLoad() {
@@ -26,19 +26,13 @@ class TeamsListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = true
-        teams = Teams()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        teams.loadData {
-            self.tableView.reloadData()
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         signIn()
     }
+    
     
     func signIn() {
         let providers: [FUIAuthProvider] = [
@@ -49,18 +43,6 @@ class TeamsListViewController: UIViewController {
             present(authUI.authViewController(), animated: true, completion: nil)
         } else {
             tableView.isHidden = false
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowTeam" {
-            let destination = segue.destination as! TeamViewController
-            let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.team = teams.teamArray[selectedIndexPath.row]
-        } else {
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                tableView.deselectRow(at: selectedIndexPath, animated: true)
-            }
         }
     }
     
@@ -79,12 +61,12 @@ class TeamsListViewController: UIViewController {
 
 extension TeamsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teams.teamArray.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath)
-        cell.textLabel?.text = teams.teamArray[indexPath.row].teamName
+        cell.textLabel?.text = teams[indexPath.row]
         return cell
     }
 }

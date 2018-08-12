@@ -10,6 +10,7 @@
 		2150EFCF333C8B994C1BB311 /* Pods_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4A16B3A09A74CC99D6312B /* Pods_Hackathon.framework */; };
 		3E27E3DA211FAFED007992F6 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27E3D9211FAFED007992F6 /* TeamViewController.swift */; };
 		3E27E3DC211FB175007992F6 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27E3DB211FB175007992F6 /* Team.swift */; };
+		3E3EFF6E2120A5EE00B9EDC1 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EFF6D2120A5EE00B9EDC1 /* Teams.swift */; };
 		3E407221211F490300FA9CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E407220211F490300FA9CC1 /* AppDelegate.swift */; };
 		3E407223211F490300FA9CC1 /* TeamsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E407222211F490300FA9CC1 /* TeamsListViewController.swift */; };
 		3E407226211F490300FA9CC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E407224211F490300FA9CC1 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		2896207EF0398905662D1201 /* Pods-Hackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon/Pods-Hackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		3E27E3D9211FAFED007992F6 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		3E27E3DB211FB175007992F6 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		3E3EFF6D2120A5EE00B9EDC1 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		3E40721D211F490200FA9CC1 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E407220211F490300FA9CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E407222211F490300FA9CC1 /* TeamsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				3E407220211F490300FA9CC1 /* AppDelegate.swift */,
+				3E3EFF6D2120A5EE00B9EDC1 /* Teams.swift */,
 				3E27E3DB211FB175007992F6 /* Team.swift */,
 				3E407222211F490300FA9CC1 /* TeamsListViewController.swift */,
 				3E27E3D9211FAFED007992F6 /* TeamViewController.swift */,
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E27E3DC211FB175007992F6 /* Team.swift in Sources */,
+				3E3EFF6E2120A5EE00B9EDC1 /* Teams.swift in Sources */,
 				3E407223211F490300FA9CC1 /* TeamsListViewController.swift in Sources */,
 				3E27E3DA211FAFED007992F6 /* TeamViewController.swift in Sources */,
 				3E407221211F490300FA9CC1 /* AppDelegate.swift in Sources */,
